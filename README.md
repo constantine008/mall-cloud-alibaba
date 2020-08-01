@@ -12,6 +12,7 @@
 mall-cloud-alibaba 是一套基于开源商城 mall 改造的 spring cloud alibaba 体系微服务商城系统。采用了spring cloud alibaba 、 Spring Cloud Greenwich、Spring Boot 2、MyBatis、Docker、Elasticsearch等核心技术。前台商城系统包含首页门户、商品推荐、商品搜索、商品展示、购物车、订单流程、会员中心、客户服务、帮助中心等模块。 后台管理系统包含商品管理、订单管理、会员管理、促销管理、运营管理、内容管理、统计报表、财务管理、权限管理、设置等模块。
 
 ## 演示地址
+前端代码地址：https://github.com/mtcarpenter/mall-admin-web
 
 演示地址：http://148.70.69.18:8090 用户名:admin 密码:123456
 
@@ -23,7 +24,7 @@ mall-cloud-alibaba 是一套基于开源商城 mall 改造的 spring cloud aliba
 - 服务调用：Spring cloud open-Feign
 - 负载均衡：Spring cloud loadbalancer
 - 链路追踪：zipkin - sleuth
-- 权限认证：Spring secruity 
+- 权限认证：Spring security 
 - 熔断降级：Sentinel
 - 消息队列：RabbitMQ 
 - 项目部署：Docker
@@ -31,7 +32,7 @@ mall-cloud-alibaba 是一套基于开源商城 mall 改造的 spring cloud aliba
 ## 组织架构
 
 ```
-all-cloud-alibaba
+mall-cloud-alibaba
 ├─mall-common    -- 工具类及通用代码
 ├─mall-mbg MBG   -- 代码生成器
 ├─mall-security  -- Spring Security 公共配置类
@@ -42,10 +43,27 @@ all-cloud-alibaba
 ├─mall-admin-pms -- 商品管理模块服务，端口 8083
 ├─mall-admin-sms -- 营销管理模块服务，端口 8082
 ├─mall-admin-ums -- 会员管理模块服务，端口 8081
-└─mall-storage   --  文件存储服务,端口 8086
+├─mall-storage   --  文件存储服务,端口 8086
+├─mall-portal-content   --  内容模块服务,端口 8073
+├─mall-portal-coupon    --  营销模块服务,端口 8074
+├─mall-portal-member    --  会员模块服务,端口 8070
+├─mall-portal-order     --  会员模块服务,端口 8072
+└─mall-portal-product   --  商品模块服务,端口 8071
+```
+## Dubbo 版本
+
+### 下载源码
+
+```bash
+# 1、克隆 mall-cloud-alibaba 项目
+git clone git@github.com:mtcarpenter/mall-cloud-alibaba.git
+# 2、切换dubbo 分支
+git checkout dubbo
+
 ```
 
 ## mall实现的功能概览
+
 - 商品模块  
     - 商品管理
     - 商品分类管理
